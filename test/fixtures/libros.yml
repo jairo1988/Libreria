@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  autor: MyString
+  editorial: MyString
+  categoria: MyString
+  año: MyString
+  paginas: 1
+  precio: 9.99
+  descripcion: MyString
+
+two:
+  autor: MyString
+  editorial: MyString
+  categoria: MyString
+  año: MyString
+  paginas: 1
+  precio: 9.99
+  descripcion: MyString

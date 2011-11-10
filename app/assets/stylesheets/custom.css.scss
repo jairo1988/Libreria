@@ -1,0 +1,98 @@
+body {
+  background-color: #ddd;
+  color: #333;
+  margin: 26px;
+  padding: 0;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+.container{
+  background-color: #fff;}
+
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: #000;
+  &:visited {
+    color: #666; }
+  &:hover {
+    color: #fff;
+    background-color: #000; } }
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px; } }
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  ul li {
+    font-size: 12px;
+    list-style: square; } }
+
+#cabezera{
+  background-color: red;
+  padding: 10px;
+  text-align: center;
+  border: 4px solid black;
+}
+
+.label{
+  margin-top: 2%;
+  width: 22%;
+  float: left;
+}
+fieldset{
+  width: 32%;
+  &.datos_personales{
+  float: left;
+}
+}
+.actions{
+clear: both;
+}
+ul.menuinicio{
+  background: red;
+  width: 70px;
+  height: 20px;
+  padding: 1em 1em;
+  margin-left: 10px;
+  text-align: center;
+  text-decoration: none;
+  border: 3px solid black;
+  float: left;
+}
+
+.clear {clear:both;}
+

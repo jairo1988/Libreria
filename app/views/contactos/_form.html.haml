@@ -1,0 +1,21 @@
+= form_for @contacto do |f|
+  -if @contacto.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@contacto.errors.count, "error")} prohibited this contacto from being saved:"
+      %ul
+        - @contacto.errors.full_messages.each do |msg|
+          %li= msg
+
+  %fieldset.datos_contacto
+    %legend Formulario de Contacto
+    .field
+      = f.label :nombre, :class => "label"
+      = f.text_field :nombre, :size => "20", :maxlength => "10"
+    .field
+      = f.label :email, :class => "label"
+      = f.text_field :email, :size => "20"
+    .field
+      = f.label :comentario, :class => "label"
+      = f.text_area :comentario, :size => "40"
+  .actions
+    = f.submit 'Send'

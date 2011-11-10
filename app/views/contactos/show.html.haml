@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @contacto.nombre
+%p
+  %b Email:
+  = @contacto.email
+%p
+  %b Comentario:
+  = @contacto.comentario
+
+= link_to 'Back', new_contacto_path

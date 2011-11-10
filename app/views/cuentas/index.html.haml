@@ -1,0 +1,39 @@
+%h1 Información de Cuenta
+
+%table
+  %tr
+    %th Email
+    %th Password
+    %th Password confirmation
+    %th Nombre
+    %th Apellido
+    %th Nif
+    %th Direccion
+    %th Ciudad
+    %th Codigo
+    %th Provincia
+    %th Telefono
+    %th
+    %th
+    %th
+
+  - @cuentas.each do |cuenta|
+    %tr
+      %td= cuenta.email
+      %td= cuenta.password
+      %td= cuenta.password_confirmation
+      %td= cuenta.nombre
+      %td= cuenta.apellido
+      %td= cuenta.nif
+      %td= cuenta.direccion
+      %td= cuenta.ciudad
+      %td= cuenta.codigo
+      %td= cuenta.provincia
+      %td= cuenta.telefono
+      %td= link_to 'Show', cuenta
+      %td= link_to 'Edit', edit_cuenta_path(cuenta)
+      %td= link_to 'Destroy', cuenta, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Cuenta', new_cuenta_path

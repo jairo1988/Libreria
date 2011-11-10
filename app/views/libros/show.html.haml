@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Título:
+  =@libro.titulo
+%p
+  %b Autor:
+  = @libro.autor
+%p
+  %b Editorial:
+  = @libro.editorial
+%p
+  %b Categoria:
+  = @libro.categoria
+%p
+  %b Año:
+  = @libro.año
+%p
+  %b Paginas:
+  = @libro.paginas
+%p
+  %b Precio:
+  = @libro.precio
+%p
+  %b Descripcion:
+  = @libro.descripcion
+
+= link_to 'Edit', edit_libro_path(@libro)
+\|
+= link_to 'Back', libros_path

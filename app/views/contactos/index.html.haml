@@ -1,0 +1,18 @@
+%h1 Consultas Pendientes
+
+%table
+  %tr
+    %th Nombre
+    %th Email
+    %th Comentario
+    %th
+    %th
+    %th
+
+  - @contactos.each do |contacto|
+    %tr
+      %td= contacto.nombre
+      %td= contacto.email
+      %td= contacto.comentario
+      %td= link_to image_tag("show.png"), contacto
+      %td= link_to image_tag("destroy.jpg"), contacto, :confirm => 'Desea eliminar el mensage?', :method => :delete

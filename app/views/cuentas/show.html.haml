@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @cuenta.email
+%p
+  %b Password:
+  = @cuenta.password
+%p
+  %b Password confirmation:
+  = @cuenta.password_confirmation
+%p
+  %b Nombre:
+  = @cuenta.nombre
+%p
+  %b Apellido:
+  = @cuenta.apellido
+%p
+  %b Nif:
+  = @cuenta.nif
+%p
+  %b Direccion:
+  = @cuenta.direccion
+%p
+  %b Ciudad:
+  = @cuenta.ciudad
+%p
+  %b Codigo:
+  = @cuenta.codigo
+%p
+  %b Provincia:
+  = @cuenta.provincia
+%p
+  %b Telefono:
+  = @cuenta.telefono
+
+= link_to 'Edit', edit_cuenta_path(@cuenta)
+\|
+= link_to 'Back', cuenta_path
