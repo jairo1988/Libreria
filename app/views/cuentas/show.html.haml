@@ -4,12 +4,6 @@
   %b Email:
   = @cuenta.email
 %p
-  %b Password:
-  = @cuenta.password
-%p
-  %b Password confirmation:
-  = @cuenta.password_confirmation
-%p
   %b Nombre:
   = @cuenta.nombre
 %p
@@ -33,7 +27,10 @@
 %p
   %b Telefono:
   = @cuenta.telefono
+%p
+  %b Administrador:
+  = @cuenta.administrador
 
-= link_to 'Edit', edit_cuenta_path(@cuenta)
-\|
-= link_to 'Back', cuenta_path
+-#= link_to 'Edit', edit_cuenta_path(@cuenta)
+-#\|
+= link_to 'Back', root_path

@@ -1,5 +1,26 @@
-%h1 Información de la Cuenta
+%h1 Sign Up
+= form_for @cuenta do |f|
+  -if @cuenta.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@cuenta.errors.count, "error")} prohibited this cuenta from being saved:"
+      %ul
+        - @cuenta.errors.full_messages.each do |msg|
+          %li= msg
+  %fieldset.datos_cuenta
+    %legend Datos Acceso
+    .field
+      = f.label :email, :class => "label"
+      = f.text_field :email, :size => "20"
+    .field
+      = f.label :password, :class => "label"
+      = f.password_field :password, :size => "20"
+    .field
+      = f.label :password_confirmation, :class => "label"
+      = f.password_field :password_confirmation, :size => "20"
 
-= render 'form'
+
+
+  .actions
+    = f.submit 'Registrarse'
 
 

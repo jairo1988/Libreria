@@ -1,0 +1,24 @@
+!!!
+%html
+%head
+  = render 'layouts/stylesheets'
+  = javascript_include_tag "application"
+  = csrf_meta_tag
+
+%body
+  %header#cabezera
+    %h1 Librería
+    %p.derecha
+      - if current_cuenta
+        = "Logged in as #{current_cuenta.email}"
+        = link_to "Salir", log_out_path
+      - else
+        = link_to "Registrarse", sign_up_path
+        ||
+        = link_to "Logearse", log_in_path
+    = render 'layouts/menu'
+  .clear
+
+
+  .container.showgrid
+    = yield

@@ -3,8 +3,6 @@
 %table
   %tr
     %th Email
-    %th Password
-    %th Password confirmation
     %th Nombre
     %th Apellido
     %th Nif
@@ -13,15 +11,13 @@
     %th Codigo
     %th Provincia
     %th Telefono
-    %th
+    %th Administrador
     %th
     %th
 
   - @cuentas.each do |cuenta|
     %tr
       %td= cuenta.email
-      %td= cuenta.password
-      %td= cuenta.password_confirmation
       %td= cuenta.nombre
       %td= cuenta.apellido
       %td= cuenta.nif
@@ -30,9 +26,10 @@
       %td= cuenta.codigo
       %td= cuenta.provincia
       %td= cuenta.telefono
-      %td= link_to 'Show', cuenta
-      %td= link_to 'Edit', edit_cuenta_path(cuenta)
-      %td= link_to 'Destroy', cuenta, :confirm => 'Are you sure?', :method => :delete
+      %td= cuenta.administrador
+      -#%td= link_to image_tag("show.png"), cuenta
+      %td= link_to image_tag("edit.png"), edit_cuenta_path(cuenta)
+      %td=link_to image_tag("destroy.jpg"),cuenta, :confirm => 'Are you sure?', :method => :delete
 
 %br
 

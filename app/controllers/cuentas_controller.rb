@@ -1,4 +1,6 @@
 class CuentasController < ApplicationController
+before_filter :correct_cuenta, :only => [:edit,:update]
+
   # GET /cuenta
   # GET /cuenta.json
   def index
@@ -25,13 +27,7 @@ class CuentasController < ApplicationController
   # GET /cuenta/new.json
   def new
     @cuenta = Cuenta.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @cuenta }
-    end
   end
-
   # GET /cuenta/1/edit
   def edit
     @cuenta = Cuenta.find(params[:id])
@@ -41,15 +37,10 @@ class CuentasController < ApplicationController
   # POST /cuenta.json
   def create
     @cuenta = Cuenta.new(params[:cuenta])
-
-    respond_to do |format|
-      if @cuenta.save
-        format.html { redirect_to @cuenta, notice: 'Cuenta was successfully created.' }
-        format.json { render json: @cuenta, status: :created, location: @cuenta }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @cuenta.errors, status: :unprocessable_entity }
-      end
+    if @cuenta.save
+      redirect_to log_in_url, notice: 'Signed up!'
+    else
+      render action: "new"
     end
   end
 
@@ -60,7 +51,7 @@ class CuentasController < ApplicationController
 
     respond_to do |format|
       if @cuenta.update_attributes(params[:cuenta])
-        format.html { redirect_to @cuenta, notice: 'Cuentum was successfully updated.' }
+        format.html { redirect_to @cuenta, notice: 'Cuenta was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -76,8 +67,19 @@ class CuentasController < ApplicationController
     @cuenta.destroy
 
     respond_to do |format|
-      format.html { redirect_to cuenta_url }
+      format.html { redirect_to cuentas_url }
       format.json { head :ok }
     end
   end
 end
+
+ private
+  def authenticate
+      deny_access unless signed_in?
+    end
+
+  def correct_cuenta
+    @cuenta = Cuenta.find(params[:id])
+
+    redirect_to(root_path, :notice => "No tienes permiso para modificar esta cuenta.") unless current_cuenta == @cuenta
+  end
