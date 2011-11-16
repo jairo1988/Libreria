@@ -18,7 +18,10 @@ end
 
 gem 'jquery-rails'
 gem 'therubyracer'
-gem 'thinking-sphinx'
+gem 'formtastic'
+gem 'carrierwave'
+gem 'paperclip'
+#gem 'thinking-sphinx'
 gem 'haml-rails'
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem 'bcrypt-ruby', :require => 'bcrypt'

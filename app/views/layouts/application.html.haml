@@ -8,7 +8,7 @@
 %body
   %header#cabezera
     %h1 Librería
-    %p.derecha
+    %p.centrado
       - if current_cuenta
         = "Logged in as #{current_cuenta.email}"
         = link_to "Salir", log_out_path

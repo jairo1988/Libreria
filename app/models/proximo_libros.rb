@@ -1,4 +1,4 @@
-class Libro < ActiveRecord::Base
+class ProximoLibros < ActiveRecord::Base
   attr_accessible :photo;
   #paperclip
   has_attached_file :photo, :styles => { :thumb => "50x50", :small => "50x50"}

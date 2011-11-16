@@ -1,4 +1,4 @@
-%h1 Listing libros
+%h1 Porximos Libros
 
 %table
   %tr
@@ -14,9 +14,9 @@
     -#%th
     -#%th
 
-  - @libros.each do |libro|
+  - @proximos_libros.each do |libro|
     %tr
-      %td= libro.titulo
+      %td= proximos_libros.titulo
       -#%td= libro.autor
       -#%td= libro.editorial
       -#%td= libro.categoria
@@ -28,4 +28,4 @@
       -#%td= link_to 'Edit', edit_libro_path(libro)
       -#%td= link_to 'Destroy', libro, :confirm => 'Are you sure?', :method => :delete
 %br
-= link_to 'New Libro', new_libro_path
+= link_to 'New Libro', proximos_libro_path

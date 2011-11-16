@@ -1,5 +1,11 @@
 Libreria::Application.routes.draw do
 
+  resources :proximos_libros
+
+  resources :proximoss_libros
+
+  resources :proximamentes
+
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
 

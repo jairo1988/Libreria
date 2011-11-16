@@ -1,0 +1,23 @@
+= semantic_form_for @proximos_libros, :html => { :multipart => true} do |f|
+  -if @proximos_libros.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@proximos_libros.errors.count, "error")} prohibited this libro from being saved:"
+      %ul
+        - @proximos_libros.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.inputs :name => "Añadir libro" do
+    = f.input :titulo
+    = f.input :autor
+    = f.input :editorial
+    = f.input :categoria
+    = f.input :anyo, :label => "Año"
+    = f.input :paginas, :label => "Páginas"
+    = f.input :precio
+    = f.input :descripcion, :as => :text, :label => "Descripción"
+    = f.input :photo, :as=> :file
+
+
+  = f.buttons
+
+
