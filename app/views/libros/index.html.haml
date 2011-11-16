@@ -1,4 +1,4 @@
-%h1 Listing libros
+%h1 Libros Actuales
 
 %table
   %tr
@@ -27,5 +27,5 @@
       -#%td= link_to 'Show', libro
       -#%td= link_to 'Edit', edit_libro_path(libro)
       -#%td= link_to 'Destroy', libro, :confirm => 'Are you sure?', :method => :delete
-%br
-= link_to 'New Libro', new_libro_path
+  - if current_cuenta && current_cuenta.administrador?
+    = link_to 'New Libro', new_libro_path

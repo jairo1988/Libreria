@@ -43,9 +43,10 @@
     .field
       = f.label :password_confirmation, :class => "label"
       = f.password_field :password_confirmation, :size => "20"
-    .field
-      =f.label :administrador
-      =f.select( :administrador ,[['No', 0 ],['Si', 1]])
+    - if current_cuenta && current_cuenta.administrador?
+      .field
+        =f.label :administrador
+        =f.select( :administrador ,[['No', 0 ],['Si', 1]])
 
   .actions
     = f.submit 'Save'

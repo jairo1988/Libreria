@@ -1,7 +1,8 @@
-%ul.menuinicio
+%ul#menuinicio
   %li= link_to "Libros", libros_path
-  - if signed_in?
-    %li= link_to "Cuenta", edit_cuenta_path(current_cuenta)
-  -#- if administrador?
-  %li= link_to "Contacto", new_contacto_path
+  %li= link_to "Proximos Libros",proximos_libros_path
+  - unless current_cuenta
+    %li= link_to "Contacto", new_contacto_path
+
 .clear
+

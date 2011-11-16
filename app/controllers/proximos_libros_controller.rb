@@ -2,7 +2,7 @@ class ProximosLibrosController < ApplicationController
   # GET /proximos_libros
   # GET /proximos_libros.json
   def index
-    @proximos_libros = ProximoLibros.all
+    @proximos_libros = Libro.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class ProximosLibrosController < ApplicationController
   # GET /proximos_libros/1
   # GET /proximos_libros/1.json
   def show
-    @proximo_libros = ProximoLibros.find(params[:id])
+    @proximo_libros = Libro.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class ProximosLibrosController < ApplicationController
   # GET /proximos_libros/new
   # GET /proximos_libros/new.json
   def new
-    @proximo_libros = ProximoLibros.new
+    @proximo_libros = Libro.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class ProximosLibrosController < ApplicationController
 
   # GET /proximos_libros/1/edit
   def edit
-    @proximo_libros = ProximoLibros.find(params[:id])
+    @proximo_libros = Libro.find(params[:id])
   end
 
   # POST /proximos_libros
   # POST /proximos_libros.json
   def create
-    @proximo_libros = ProximoLibros.new(params[:proximo_libros])
+    @proximo_libros = Libro.new(params[:proximo_libros])
 
     respond_to do |format|
       if @proximo_libros.save
@@ -56,7 +56,7 @@ class ProximosLibrosController < ApplicationController
   # PUT /proximos_libros/1
   # PUT /proximos_libros/1.json
   def update
-    @proximo_libros = ProximoLibros.find(params[:id])
+    @proximo_libros = Libro.find(params[:id])
 
     respond_to do |format|
       if @proximo_libros.update_attributes(params[:proximo_libros])
@@ -72,7 +72,7 @@ class ProximosLibrosController < ApplicationController
   # DELETE /proximos_libros/1
   # DELETE /proximos_libros/1.json
   def destroy
-    @proximo_libros = ProximoLibros.find(params[:id])
+    @proximo_libros = Libro.find(params[:id])
     @proximo_libros.destroy
 
     respond_to do |format|

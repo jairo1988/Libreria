@@ -1,4 +1,4 @@
-%h1 Porximos Libros
+%h1 Proximos Libros
 
 %table
   %tr
@@ -14,9 +14,9 @@
     -#%th
     -#%th
 
-  - @proximos_libros.each do |libro|
+  - @proximos_libros.each do |proximo_libros|
     %tr
-      %td= proximos_libros.titulo
+      %td= proximo_libros.titulo
       -#%td= libro.autor
       -#%td= libro.editorial
       -#%td= libro.categoria
@@ -27,5 +27,5 @@
       -#%td= link_to 'Show', libro
       -#%td= link_to 'Edit', edit_libro_path(libro)
       -#%td= link_to 'Destroy', libro, :confirm => 'Are you sure?', :method => :delete
-%br
-= link_to 'New Libro', proximos_libro_path
+  - if current_cuenta && current_cuenta.administrador?
+    = link_to 'New Proximo libros', new_proximo_libros_path

@@ -69,12 +69,15 @@ div {
   padding: 5px;
   margin:0 auto;
   width: 940px;
-  height: 80px;
+  height: 105px;
   text-align: center;
   border: 4px solid black;
 }
 .centrado{
   text-align: center;
+}
+.derecha{
+  text-align: right;
 }
 
 .label{
@@ -95,14 +98,16 @@ fieldset{
 .actions{
 clear: both;
 }
-ul.menuinicio{
+ul#menuinicio{
   padding-left: 0;
   li {
   background: red;
   width: 70px;
-  height: 20px;
-  padding: 1em 1em;
-  margin-right: 10px;
+  height: 25px;
+  margin-top: 20px;
+  padding: 1.2em 1em;
+  margin-right: 11px;
+  margin-left: -5px;
   text-align: center;
   text-decoration: none;
   border: 3px solid black;
@@ -115,3 +120,50 @@ ul.menuinicio{
 }
 .clear {clear:both;}
 
+// Menu Desplegable
+ul#menu_desplegable{
+  border: 2px solid black;
+  text-align: center;
+  margin-right: 32px;
+  padding: 0px;
+  width: 49px;
+  font-size: 17px;
+  background-color: red;
+  margin-top: -180px;
+  list-style: none;
+  float: right;
+}
+ul#menu_desplegable li:hover > ul{
+  display:block;
+}
+ul#menu_desplegable ul {
+  position:absolute; // Esta posicion es relativa al li que contiene a este ul
+  left: 30px; // para que no monte sobre el li
+  top:-1px;
+  display:none;
+  list-style:none;
+}
+ul#menu_desplegable li{
+  position: relative;// las cordenadas de los ul inferiores seran relativas al li que los contiene
+  width: 77px;
+  margin-top: 4px;
+}
+ul#menu_desplegable> li >ul{// solo para los ul debajo de los li de primer nivel
+  position:absolute;
+  left: -35px;
+  top:19px;
+  width:83px;
+  padding: 4px;
+  margin-top: 0px;
+  margin-left: 0;
+  border: 2px solid black;
+  display:none;
+  list-style: none;
+}
+ul#menu_desplegable > li {// solo para li de primer nivel
+  display:inline;
+}
+li#submenu{
+  border: 2px solid black;
+  background-color: red;
+}

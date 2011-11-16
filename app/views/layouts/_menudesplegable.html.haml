@@ -1,0 +1,11 @@
+- if signed_in?
+  %ul#menu_desplegable
+    %li
+      Menu
+      %ul
+        %li#submenu= link_to "Cuenta", edit_cuenta_path(current_cuenta)
+        - if current_cuenta && current_cuenta.administrador?
+          %li#submenu= link_to "Peticiones", contactos_path
+          %li#submenu= link_to "Usuarios", cuentas_path
+        - if current_cuenta && !current_cuenta.administrador?
+          %li#submenu= link_to "Contacto", new_contacto_path

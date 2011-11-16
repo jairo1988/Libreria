@@ -17,6 +17,8 @@ module SessionsHelper
   def current_cuenta=(cuenta)
     cuenta==current_cuenta
   end
+
+
   def signed_in?
     !current_cuenta.nil?
   end

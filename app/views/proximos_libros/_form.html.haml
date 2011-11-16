@@ -1,9 +1,9 @@
-= semantic_form_for @proximos_libros, :html => { :multipart => true} do |f|
-  -if @proximos_libros.errors.any?
+= semantic_form_for @proximo_libros do |f|
+  -if @proximo_libros.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@proximos_libros.errors.count, "error")} prohibited this libro from being saved:"
+      %h2= "#{pluralize(@proximo_libros.errors.count, "error")} prohibited this proximo_libros from being saved:"
       %ul
-        - @proximos_libros.errors.full_messages.each do |msg|
+        - @proximo_libros.errors.full_messages.each do |msg|
           %li= msg
 
   = f.inputs :name => "Añadir libro" do
@@ -20,4 +20,29 @@
 
   = f.buttons
 
-
+  -#.field
+    -#= f.label :titulo
+    -#= f.text_field :titulo
+  -#.field
+    -#= f.label :autor
+    -#= f.text_field :autor
+  -#.field
+    -#= f.label :editorial
+    -#= f.text_field :editorial
+  -#.field
+    -#= f.label :categoria
+    -#= f.text_field :categoria
+  -#.field
+    -#= f.label :anyo
+    -#= f.text_field :anyo
+  -#.field
+    -#= f.label :paginas
+    -#= f.number_field :paginas
+  -#.field
+    -#= f.label :precio
+    -#= f.text_field :precio
+  -#.field
+    -#= f.label :descripcion
+    -#= f.text_field :descripcion
+  -#.actions
+    -#= f.submit 'Save'
