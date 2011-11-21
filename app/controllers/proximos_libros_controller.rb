@@ -2,7 +2,7 @@ class ProximosLibrosController < ApplicationController
   # GET /proximos_libros
   # GET /proximos_libros.json
   def index
-    @proximos_libros = Libro.all
+    @proximo_libros = Libro.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,14 +41,11 @@ class ProximosLibrosController < ApplicationController
   # POST /proximos_libros.json
   def create
     @proximo_libros = Libro.new(params[:proximo_libros])
-
-    respond_to do |format|
+    @proximos_libros.proximolibro=true;
       if @proximo_libros.save
-        format.html { redirect_to @proximo_libros, notice: 'Proximo libros was successfully created.' }
-        format.json { render json: @proximo_libros, status: :created, location: @proximo_libros }
+        redirect_to @proximo_libros, notice: 'Proximo libros was successfully created.'
       else
-        format.html { render action: "new" }
-        format.json { render json: @proximo_libros.errors, status: :unprocessable_entity }
+        render action: "new"
       end
     end
   end
@@ -80,4 +77,3 @@ class ProximosLibrosController < ApplicationController
       format.json { head :ok }
     end
   end
-end

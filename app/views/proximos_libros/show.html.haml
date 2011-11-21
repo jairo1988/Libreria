@@ -2,28 +2,34 @@
 
 %p
   %b Título:
-  =@libro.titulo
+  =@proximo_libros.titulo
 %p
   %b Autor:
-  = @libro.autor
+  = @proximo_libros.autor
 %p
   %b Editorial:
-  = @libro.editorial
+  = @proximo_libros.editorial
 %p
   %b Categoria:
-  = @libro.categoria
+  = @proximo_libros.categoria
 %p
   %b Año:
-  = @libro.año
+  = @proximo_libros.anyo
 %p
   %b Paginas:
-  = @libro.paginas
+  = @proximo_libros.paginas
 %p
   %b Precio:
-  = @libro.precio
+  = @proximo_libros.precio
 %p
   %b Descripcion:
-  = @libro.descripcion
+  = @proximo_libros.descripcion
+%p
+  %b Photo
+  =@proximo_libros.photo
+-#%p
+  -#%b Disponible?
+  -#=@proximo_libros.proximolibro
 
 = link_to 'Edit', edit_proximo_libros_path(@proximo_libros)
 \|

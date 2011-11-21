@@ -1,8 +1,9 @@
-%h1 Libros Actuales
+%h1 Libros Disponibles
 
 %table
   %tr
     %th Título
+    -#%th Photo
     -#%th Autor
     -#%th Editorial
     -#%th Categoria
@@ -17,10 +18,11 @@
   - @libros.each do |libro|
     %tr
       %td= libro.titulo
+      %td= link_to image_tag(libro.photo.url(:thumb)), libro
       -#%td= libro.autor
       -#%td= libro.editorial
       -#%td= libro.categoria
-      -#%td= libro.año
+      -#%td= libro.anyo
       -#%td= libro.paginas
       -#%td= libro.precio
       -#%td= libro.descripcion
@@ -28,4 +30,4 @@
       -#%td= link_to 'Edit', edit_libro_path(libro)
       -#%td= link_to 'Destroy', libro, :confirm => 'Are you sure?', :method => :delete
   - if current_cuenta && current_cuenta.administrador?
-    = link_to 'New Libro', new_libro_path
+    = link_to 'Añadir Libro', new_libro_path

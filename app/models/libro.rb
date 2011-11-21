@@ -1,5 +1,5 @@
 class Libro < ActiveRecord::Base
-  attr_accessible :photo;
+  attr_accessible :titulo,:autor,:editorial,:categoria,:anyo,:paginas,:precio,:descripcion,:photo,:proximolibro
   #paperclip
   has_attached_file :photo, :styles => { :thumb => "50x50", :small => "50x50"}
   validates_attachment_size :photo, :less_than => 2.megabytes

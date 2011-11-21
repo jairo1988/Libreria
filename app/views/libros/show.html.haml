@@ -14,7 +14,7 @@
   = @libro.categoria
 %p
   %b Año:
-  = @libro.año
+  = @libro.anyo
 %p
   %b Paginas:
   = @libro.paginas
@@ -24,6 +24,13 @@
 %p
   %b Descripcion:
   = @libro.descripcion
+%p
+  %b Photo
+  = @libro.photo
+%p
+  %b Disponible?
+  = @libro.proximolibro
+
 
 = link_to 'Edit', edit_libro_path(@libro)
 \|

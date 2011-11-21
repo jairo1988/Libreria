@@ -41,17 +41,14 @@ class LibrosController < ApplicationController
   # POST /libros.json
   def create
     @libro = Libro.new(params[:libro])
+    @libro.proximolibro=false;
 
-    respond_to do |format|
       if @libro.save
-        format.html { redirect_to @libro, notice: 'Libro was successfully created.' }
-        format.json { render json: @libro, status: :created, location: @libro }
+        redirect_to @libro, notice: 'Libro was successfully created.'
       else
-        format.html { render action: "new" }
-        format.json { render json: @libro.errors, status: :unprocessable_entity }
+        render action: "new"
       end
     end
-  end
 
   # PUT /libros/1
   # PUT /libros/1.json
