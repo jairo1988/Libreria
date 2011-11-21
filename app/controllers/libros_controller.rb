@@ -2,7 +2,7 @@ class LibrosController < ApplicationController
   # GET /libros
   # GET /libros.json
   def index
-    @libros = Libro.all
+    @libros = Libro.disponibles
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,14 +41,13 @@ class LibrosController < ApplicationController
   # POST /libros.json
   def create
     @libro = Libro.new(params[:libro])
-    @libro.proximolibro=false;
 
-      if @libro.save
-        redirect_to @libro, notice: 'Libro was successfully created.'
-      else
-        render action: "new"
-      end
+    if @libro.save
+      redirect_to @libro, notice: 'Libro was successfully created.'
+    else
+      render action: "new"
     end
+  end
 
   # PUT /libros/1
   # PUT /libros/1.json
