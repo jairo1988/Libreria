@@ -16,7 +16,7 @@
 
   - @proximo_libros.each do |proximo_libros|
     %tr
-      %td= proximo_libros.titulo
+      %td= link_to proximo_libros.titulo, proximo_libros
       %td= link_to image_tag(proximo_libros.photo.url(:thumb)), proximo_libros
       -#%td= libro.autor
       -#%td= libro.editorial

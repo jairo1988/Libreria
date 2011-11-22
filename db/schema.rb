@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121095805) do
+ActiveRecord::Schema.define(:version => 20111122085738) do
 
   create_table "contactos", :force => true do |t|
     t.string   "nombre"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20111121095805) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.boolean  "proximolibro"
+    t.integer  "stock"
   end
 
 end

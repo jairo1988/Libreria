@@ -7,9 +7,10 @@
   = csrf_meta_tag
 
 %body
+
   %header#cabezera
     %h1 Librería
-    -#%td= image_tag("libreria.jpg")
+    -#%td.uji= image_tag("uji.jpeg")
     %p.centrado
       - if current_cuenta
         = "Logged in as #{current_cuenta.email}"
