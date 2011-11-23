@@ -10,14 +10,13 @@
     = f.input :titulo
     = f.input :autor
     = f.input :editorial
-    = f.input :categoria
+    = f.input :categoria_nombre, :label => "Categoria", data: {autocomplete_source: categorias_path}
     = f.input :anyo, :label => "Año"
     = f.input :paginas, :label => "Páginas"
     = f.input :precio
     = f.input :descripcion, :as => :text, :label => "Descripción"
     = f.input :stock
     = f.input :photo, :as=> :file
-
     = f.input :proximolibro, :as=> :radio, :collection =>[["No",0],["Si",1]], :label => "Disponible?"
   = f.buttons
 

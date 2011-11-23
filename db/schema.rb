@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111122085738) do
+ActiveRecord::Schema.define(:version => 20111123100418) do
+
+  create_table "categorias", :force => true do |t|
+    t.string   "categoria_nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contactos", :force => true do |t|
     t.string   "nombre"
@@ -49,7 +55,6 @@ ActiveRecord::Schema.define(:version => 20111122085738) do
   create_table "libros", :force => true do |t|
     t.string   "autor"
     t.string   "editorial"
-    t.string   "categoria"
     t.string   "anyo"
     t.integer  "paginas"
     t.decimal  "precio"
@@ -63,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20111122085738) do
     t.datetime "photo_updated_at"
     t.boolean  "proximolibro"
     t.integer  "stock"
+    t.integer  "categoria_id"
   end
 
 end

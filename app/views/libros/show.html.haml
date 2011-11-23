@@ -11,7 +11,8 @@
   = @libro.editorial
 %p
   %b Categoria:
-  = @libro.categoria
+  = @libro.categoria_nombre
+  -#= @libro.categoria.categoria_nombre if @libro.categoria
 %p
   %b Año Publicación:
   = @libro.anyo

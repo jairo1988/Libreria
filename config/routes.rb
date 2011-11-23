@@ -2,10 +2,6 @@ Libreria::Application.routes.draw do
 
   resources :proximos_libros
 
-  resources :proximoss_libros
-
-  resources :proximamentes
-
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
 
@@ -19,8 +15,15 @@ Libreria::Application.routes.draw do
 
   resources :libros
 
+  resources :categorias
+
   root :to => 'libros#index'
 
+  #Store::Application.routes.draw do
+    #root to: 'libros#index'
+    #resources :libros
+    #resources :categorias
+  #end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
