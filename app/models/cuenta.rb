@@ -1,5 +1,6 @@
 class Cuenta < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :administrador, :nombre, :apellido, :nif, :direccion, :ciudad, :codigo, :telefono, :provincia
+  has_many :reserva
   attr_accessor :password
   before_save :encrypt_password
   validates_confirmation_of :password

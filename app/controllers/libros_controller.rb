@@ -24,7 +24,7 @@ class LibrosController < ApplicationController
   # GET /libros/new
   # GET /libros/new.json
   def new
-    @libro = Libro.new
+    @libro = Libro.new #(:anyo => 2011)
 
     respond_to do |format|
       format.html # new.html.erb

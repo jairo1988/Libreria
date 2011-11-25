@@ -1,0 +1,19 @@
+%h2 Formulário Reserva de Libro
+= semantic_form_for [@proximo_libros, @reserva], :url => proximo_libros_reservas_path(@proximo_libros), :html => { :multipart => true} do |f|
+  -if @reserva.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@reserva.errors.count, "error")} prohibited this libro from being saved:"
+      %ul
+        - @reserva.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.inputs :name => "Reservar Libro" do
+    -#= @reserva.libro.titulo
+    = f.input :libro_id
+    = f.input :cuenta_id
+    = f.input :cantidad
+    = f.input :fecha_reserva
+  = f.buttons
+
+
+

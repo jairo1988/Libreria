@@ -1,9 +1,10 @@
-%h1 Próximos Libros
+%h1 Proximos Libros
 
 %table
   %tr
     %th Título
-    %th Comprar
+    %th Reservar
+    -#%th Autor
     -#%th Editorial
     -#%th Categoria
     -#%th Año
@@ -14,10 +15,10 @@
     -#%th
     -#%th
 
-  - @proximo_libros.each do |proximo_libros|
+  - @proximos_libros.each do |proximo_libros|
     %tr
-      %td= link_to proximo_libros.titulo, proximo_libros
-      %td= link_to image_tag(proximo_libros.photo.url(:thumb)), proximo_libros
+      %td= link_to proximo_libros.titulo,proximo_libros
+      %td= link_to image_tag(proximo_libros.photo.url(:thumb)), new_proximo_libros_reserva_path(proximo_libros)
       -#%td= libro.autor
       -#%td= libro.editorial
       -#%td= libro.categoria
@@ -28,5 +29,3 @@
       -#%td= link_to 'Show', libro
       -#%td= link_to 'Edit', edit_libro_path(libro)
       -#%td= link_to 'Destroy', libro, :confirm => 'Are you sure?', :method => :delete
-  -#- if current_cuenta && current_cuenta.administrador?
-    -#= link_to 'New Proximo libros', new_proximo_libros_path

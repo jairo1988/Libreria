@@ -51,7 +51,7 @@ before_filter :correct_cuenta, :only => [:edit,:update]
 
     respond_to do |format|
       if @cuenta.update_attributes(params[:cuenta])
-        format.html { redirect_to @cuenta, notice: 'Cuenta was successfully updated.' }
+        format.html { redirect_to @cuenta, notice: 'La cuenta ha sido actualizada' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

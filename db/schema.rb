@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123100418) do
+ActiveRecord::Schema.define(:version => 20111125093945) do
 
   create_table "categorias", :force => true do |t|
     t.string   "categoria_nombre"
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(:version => 20111123100418) do
     t.boolean  "proximolibro"
     t.integer  "stock"
     t.integer  "categoria_id"
+    t.datetime "fecha_disponible"
+  end
+
+  create_table "reservas", :force => true do |t|
+    t.integer  "libro_id"
+    t.integer  "cuenta_id"
+    t.datetime "fecha_reserva"
+    t.integer  "cantidad"
   end
 
 end

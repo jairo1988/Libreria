@@ -1,5 +1,6 @@
-%h1 Editing libro
+-if current_cuenta && current_cuenta.administrador?
+  %h1 Editing libro
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Back', libros_path
+  = link_to 'Back', libros_path

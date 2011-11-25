@@ -18,6 +18,7 @@
     = f.input :stock
     = f.input :photo, :as=> :file
     = f.input :proximolibro, :as=> :radio, :collection =>[["No",0],["Si",1]], :label => "Disponible?"
+    = f.input :fecha_disponible, :label => "Disponible desde", :as => :string
   = f.buttons
 
   -#.field
