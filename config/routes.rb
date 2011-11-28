@@ -1,6 +1,6 @@
 Libreria::Application.routes.draw do
 
-  resources :proximos_libros do
+  resources :cuentas do
     resources :reservas
   end
 
@@ -13,11 +13,11 @@ Libreria::Application.routes.draw do
 
   resources :contactos
 
-  resources :cuentas
-
   resources :libros
 
   resources :categorias
+
+  resources :proximos_libros
 
 
   root :to => 'libros#index'

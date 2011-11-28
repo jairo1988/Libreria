@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111125093945) do
+ActiveRecord::Schema.define(:version => 20111128121017) do
+
+  create_table "carrito", :force => true do |t|
+    t.integer "libro_id"
+    t.integer "cuenta_id"
+    t.integer "cantidad"
+    t.boolean "pendiente_comprar"
+  end
 
   create_table "categorias", :force => true do |t|
     t.string   "categoria_nombre"

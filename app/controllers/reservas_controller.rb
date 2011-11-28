@@ -23,8 +23,9 @@ class ReservasController < ApplicationController
   # GET /libros/new
   # GET /libros/new.json
   def new
-    @reserva = Reserva.new
-    @proximo_libros = Libro.find(params[:proximo_libros_id])
+    @proximo_libros = Libro.find(params[:libro_id])
+    @cuenta = Cuenta.find(params[:cuenta_id])
+    @reserva = @cuenta.reservas.new(:libro => @proximo_libros, :fecha_reserva => Date.today)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,20 +37,25 @@ class ReservasController < ApplicationController
     @reserva = Reserva.new(params[:reserva])
 
     if @reserva.save
-      redirect_to @libro, notice: 'La reserva del libro se ha hecho satisfactoriamente'
+      redirect_to @reserva.cuenta, notice: 'La reserva del libro se ha hecho satisfactoriamente'
     else
       render action: "new"
     end
+  end
+
+  def edit
+    @reserva = Reserva.find(params[:id])
   end
 
   # DELETE /libros/1
   # DELETE /libros/1.json
   def destroy
     @reserva = Reserva.find(params[:id])
+    cuenta = @reserva.cuenta
     @reserva.destroy
 
     respond_to do |format|
-      format.html { redirect_to reservas_url }
+      format.html { redirect_to cuenta }
       format.json { head :ok }
     end
   end

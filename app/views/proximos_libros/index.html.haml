@@ -18,7 +18,7 @@
   - @proximos_libros.each do |proximo_libros|
     %tr
       %td= link_to proximo_libros.titulo,proximo_libros
-      %td= link_to image_tag(proximo_libros.photo.url(:thumb)), new_proximo_libros_reserva_path(proximo_libros)
+      %td= link_to image_tag(proximo_libros.photo.url(:thumb)), new_cuenta_reserva_path(current_cuenta, :libro_id => proximo_libros.id)
       -#%td= libro.autor
       -#%td= libro.editorial
       -#%td= libro.categoria

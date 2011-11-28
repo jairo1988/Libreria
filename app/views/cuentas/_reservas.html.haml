@@ -1,0 +1,13 @@
+- unless @cuenta.reservas.empty?
+  %table
+    %tr
+      %th Reservas
+      %th Cantidad
+      %th Editar
+      %th Eliminar
+    - @cuenta.reservas.each do |reserva|
+      %tr
+        %td= link_to reserva.libro.titulo, reserva.libro
+        %td= reserva.cantidad
+        %td= link_to image_tag("edit.png"), edit_cuenta_reserva_path(current_cuenta, reserva)
+        %td= link_to image_tag("destroy.jpg"),cuenta_reserva_path(current_cuenta,reserva), :confirm => "Desea eliminar la reserva #{reserva.libro.titulo}?", :method => :delete
