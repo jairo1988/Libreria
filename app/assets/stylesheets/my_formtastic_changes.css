@@ -1,4 +1,7 @@
 form.formtastic.libro fieldset.inputs { border: 2px solid black; width: 40%; padding: 1%; }
 form.formtastic.libro fieldset.inputs label { width: 21%;}
 form.formtastic.libro fieldset.inputs legend { color: green; text-align: center; margin-left: 40%;}
-form.formtastic.libro .stringish input {margin-top: 7px;}
+form.formtastic .stringish input {margin-top: 7px;}
+form.formtastic .stringish input { width: 49%; }
+form.formtastic .input label{ display:none; float:left; margin-left: 14px;  padding-top: 0.5em; width: 24%;}
+form.formtastic legend{ padding-left: 11px;}

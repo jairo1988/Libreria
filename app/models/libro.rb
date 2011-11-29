@@ -2,6 +2,7 @@ class Libro < ActiveRecord::Base
   attr_accessible :titulo,:autor,:editorial,:anyo,:paginas,:precio,:descripcion,:photo,:proximolibro,:stock,:categoria_id, :categoria_nombre
   belongs_to :categoria
   has_many :reservas
+  has_many :carritos
 
 
   #def nombre_categoria=(v)

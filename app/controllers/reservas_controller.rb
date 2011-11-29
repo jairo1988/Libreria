@@ -47,6 +47,14 @@ class ReservasController < ApplicationController
     @reserva = Reserva.find(params[:id])
   end
 
+  def update
+    @reserva=Reserva.find(params[:id])
+      if @reserva.update_attributes(params[:reserva])
+        redirect_to edit_cuenta_path(current_cuenta)
+      else
+        render action: "edit"
+      end
+  end
   # DELETE /libros/1
   # DELETE /libros/1.json
   def destroy
@@ -55,7 +63,7 @@ class ReservasController < ApplicationController
     @reserva.destroy
 
     respond_to do |format|
-      format.html { redirect_to cuenta }
+      format.html { redirect_to edit_cuenta_path(current_cuenta) }
       format.json { head :ok }
     end
   end

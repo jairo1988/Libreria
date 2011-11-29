@@ -18,7 +18,7 @@
   - @libros.each do |libro|
     %tr
       %td= link_to libro.titulo,libro
-      %td= link_to image_tag(libro.photo.url(:thumb)), libro
+      %td= link_to image_tag(libro.photo.url(:thumb)), new_cuenta_carrito_path(current_cuenta, :libro_id => libro.id)
       -#%td= libro.autor
       -#%td= libro.editorial
       -#%td= libro.categoria

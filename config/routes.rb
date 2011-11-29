@@ -4,6 +4,10 @@ Libreria::Application.routes.draw do
     resources :reservas
   end
 
+  resources :cuentas do
+    resources :carritos
+  end
+
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
 

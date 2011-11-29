@@ -1,0 +1,16 @@
+- unless @cuenta.carritos.empty?
+  %table
+    %tr
+      %th Comprar
+      %th Cantidad
+      %th Precio
+      %th Editar
+      %th Eliminar
+    - @cuenta.carritos.each do |carrito|
+      %tr
+        %td= link_to carrito.libro.titulo, carrito.libro
+        %td= carrito.cantidad
+        %td= carrito.precio_total
+        %td= link_to image_tag("edit.png"), edit_cuenta_carrito_path(current_cuenta,carrito)
+        %td= link_to image_tag("destroy.jpg"),cuenta_carrito_path(current_cuenta,carrito), :confirm => "Desea eliminar la compra #{carrito.libro.titulo}?", :method => :delete
+

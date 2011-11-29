@@ -14,7 +14,8 @@ html{
   background-color: grey;
   }
 .container{
-  background-color: #fff;}
+  background-color: #fff;
+  margin-top: 5px;}
 
 
 p, ol, ul, td {
@@ -89,13 +90,31 @@ div {
   float: left;
 }
 fieldset{
-  width: 30%;
+  width: 45%;
   &.datos_personales{
   float: left;
   }
   &.datos_cuenta{
   float: left;
   }
+}
+h2#carrito{
+  font-size: 2em;
+  margin-bottom: 0.75em;
+  padding-left: 16px;
+  padding-top: 11px
+}
+p#carrito{
+  margin-top: 8px;
+  font-size: 1.2em;
+}
+p.precio_libro{
+  margin-top: 8px;
+  font-size: 1.2em;
+}
+p.precio_total{
+  margin-top: 8px;
+  font-size: 1.2em;
 }
 
 .actions{

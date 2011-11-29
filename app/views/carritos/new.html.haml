@@ -1,0 +1,29 @@
+%h2#carrito Formulário Comprar Libro
+= semantic_form_for [@cuenta, @carrito], :url => cuenta_carritos_path(@cuenta), :html => { :multipart => true} do |f|
+  -if @carrito.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@carrito.errors.count, "error")} prohibited this libro from being saved:"
+      %ul
+        - @carrito.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.inputs :name => " Añadir a Carrito" do
+    %li.string.input.stringish
+      %label.label Título:
+      %p#carrito= @carrito.libro.titulo
+    -#= f.input :libro_id
+    -#= f.input :cuenta_id
+    = f.input :cantidad
+    %li.string.input.stringish
+      %label.label Precio Libro:
+      %p.precio_libro= @carrito.libro.precio
+    %li.string.input.stringish
+      %label.label Precio Total:
+      %p.precio_total= @carrito.libro.precio
+    = f.input :fecha_compra, :as=> :string
+    = f.input :libro_id, :as => :hidden
+    = f.input :cuenta_id, :as => :hidden
+  = f.buttons
+
+
+
