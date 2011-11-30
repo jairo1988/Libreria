@@ -9,8 +9,9 @@
 %body
 
   %header#cabezera
+    - if current_cuenta
+      = link_to image_tag("carrito1.gif", :id => "imgcarrito"), cuenta_carritos_path(current_cuenta)
     %h1 Librería
-    -#%td.uji= image_tag("uji.jpeg")
     %p.centrado
       - if current_cuenta
         = "Logged in as #{current_cuenta.email}"

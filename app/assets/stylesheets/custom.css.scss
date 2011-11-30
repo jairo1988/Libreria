@@ -68,6 +68,29 @@ div {
     font-size: 12px;
     list-style: square; } }
 
+.enlaceboton{
+  a {
+    text-decoration: none;}
+  background: #EEE;
+  color: #222;
+  margin: auto;
+  border: 1px outset #CCC;
+  padding: .1em 3em;
+  width: 5%;
+}
+
+.enlaceboton:hover{
+  background: #CCB;
+}
+.enlaceboton:active{
+  border: 1px inset #000;
+}
+
+#imgcarrito{
+  float: left;
+  height: 50px;
+  width: 50px;
+}
 #cabezera{
   background-color: red;
   padding: 5px;

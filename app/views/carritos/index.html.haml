@@ -13,4 +13,7 @@
         %td= carrito.precio_total
         %td= link_to image_tag("edit.png"), edit_cuenta_carrito_path(current_cuenta,carrito)
         %td= link_to image_tag("destroy.jpg"),cuenta_carrito_path(current_cuenta,carrito), :confirm => "Desea eliminar la compra #{carrito.libro.titulo}?", :method => :delete
+  .enlaceboton
+    = link_to 'Finalizar Compra', edit_cuenta_path(current_cuenta)
+
 
