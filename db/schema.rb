@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128121017) do
+ActiveRecord::Schema.define(:version => 20111202104111) do
 
-  create_table "carritos", :force => true do |t|
+  create_table "categorias", :force => true do |t|
+    t.string   "categoria_nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "compras", :force => true do |t|
     t.integer "libro_id"
     t.integer "cuenta_id"
     t.integer "cantidad"
     t.integer "fecha_compra"
     t.integer "precio_total"
     t.boolean "pendiente_comprar"
-  end
-
-  create_table "categorias", :force => true do |t|
-    t.string   "categoria_nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "contactos", :force => true do |t|

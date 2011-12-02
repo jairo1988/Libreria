@@ -10,7 +10,7 @@
 
   %header#cabezera
     - if current_cuenta
-      = link_to image_tag("carrito1.gif", :id => "imgcarrito"), cuenta_carritos_path(current_cuenta)
+      = link_to image_tag("carrito1.gif", :id => "imgcarrito"), cuenta_compras_path(current_cuenta)
     %h1 Librería
     %p.centrado
       - if current_cuenta

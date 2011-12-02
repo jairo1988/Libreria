@@ -1,0 +1,32 @@
+%h2#compra Formulário Comprar Libro
+= semantic_form_for [@cuenta, @compra], :url => cuenta_compras_path(@cuenta), :html => { :multipart => true} do |f|
+  -if @compra.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@compra.errors.count, "error")} prohibited this libro from being saved:"
+      %ul
+        - @compra.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.inputs :name => " Añadir a compra" do
+    %li.string.input.stringish
+      %label.label Título:
+      %p#compra= @compra.libro.titulo
+    -#= f.input :libro_id
+    -#= f.input :cuenta_id
+    = f.input :cantidad
+    %li.string.input.stringish
+      %label.label Precio Libro:
+      %p.precio_libro= @compra.libro.precio
+    %li.string.input.stringish
+      %label.label Precio Total:
+      %p.precio_total= @compra.libro.precio
+    = f.input :fecha_compra, :as=> :string
+    = f.input :libro_id, :as => :hidden
+    = f.input :cuenta_id, :as => :hidden
+  = f.buttons do
+    = f.commit_button "Añadir a Carrito"
+
+
+
+
+

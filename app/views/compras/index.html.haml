@@ -1,0 +1,21 @@
+- unless @cuenta.compras.empty?
+  %table
+    %tr
+      %th Mi Compra
+      %th Cantidad
+      %th Precio
+      %th Editar
+      %th Eliminar
+      %th Comprar
+    - @cuenta.compras.each do |compra|
+      %tr
+        %td= link_to compra.libro.titulo, compra.libro
+        %td= compra.cantidad
+        %td= compra.precio_total
+        %td= link_to image_tag("edit.png"), edit_cuenta_compra_path(current_cuenta,compra)
+        %td= link_to image_tag("destroy.jpg"), cuenta_compras_path(current_cuenta,compra), :confirm => "Desea eliminar el libro #{compra.libro.titulo} del carrito?", :method => :delete
+        %td= check_box "pendiente_comprar[#{compra.id}]", :collection => [["No",0],["Si",1]]
+.enlaceboton
+  = link_to 'Finalizar Compra', edit_cuenta_path(current_cuenta), :notice => "Los libros han sido comprados sin problemas"
+
+

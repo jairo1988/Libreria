@@ -1,4 +1,4 @@
-%h2#carrito Formulário Reserva de Libro
+%h2#compra Formulário Reserva de Libro
 = semantic_form_for [@cuenta, @reserva], :url => cuenta_reservas_path(@cuenta), :html => { :multipart => true} do |f|
   -if @reserva.errors.any?
     #error_explanation
@@ -10,7 +10,7 @@
   = f.inputs :name => "Reservar Libro" do
     %li.string.input.stringish
       %label.label Título:
-      %p#carrito= @reserva.libro.titulo
+      %p#compra= @reserva.libro.titulo
     -#= f.input :libro_id
     -#= f.input :cuenta_id
     = f.input :cantidad
