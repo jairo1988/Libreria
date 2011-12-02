@@ -1,5 +1,10 @@
 class CarritosController < ApplicationController
 
+  def finalizar_compra
+    raise
+  end
+
+
   def index
     @carritos = Carrito.all
     @cuenta = Cuenta.find(params[:cuenta_id])
@@ -37,7 +42,7 @@ class CarritosController < ApplicationController
     @carrito = Carrito.new(params[:carrito])
     #@carrito.precio_total = @carrito.cantidad * @carrito.libro.precio
     if @carrito.save
-      redirect_to cuenta_carritos_path(current_cuenta), notice: 'La compra del libro se ha hecho satisfactoriamente'
+      redirect_to cuenta_carritos_path(current_cuenta), notice: 'Libro anyadido a carrito sin problemas'
     else
       render action: "new"
     end

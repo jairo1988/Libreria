@@ -34,7 +34,7 @@
 -#%p
   -#%b Disponible?
   -#= libro.proximolibro
-= link_to 'Atras', proximos_libros_path
+= link_to 'Atras', libros_path
 - if current_cuenta && current_cuenta.administrador?
   = link_to 'Edit', edit_libro_path(@libro)
 

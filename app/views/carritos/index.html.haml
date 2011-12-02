@@ -1,19 +1,29 @@
-- unless @cuenta.carritos.empty?
-  %table
-    %tr
-      %th Comprar
-      %th Cantidad
-      %th Precio
-      %th Editar
-      %th Eliminar
-    - @cuenta.carritos.each do |carrito|
+= form_tag finalizar_compra_cuenta_carritos_path(@cuenta)  do
+
+  - unless @cuenta.carritos.empty?
+    %table
       %tr
-        %td= link_to carrito.libro.titulo, carrito.libro
-        %td= carrito.cantidad
-        %td= carrito.precio_total
-        %td= link_to image_tag("edit.png"), edit_cuenta_carrito_path(current_cuenta,carrito)
-        %td= link_to image_tag("destroy.jpg"),cuenta_carrito_path(current_cuenta,carrito), :confirm => "Desea eliminar la compra #{carrito.libro.titulo}?", :method => :delete
+        %th Mi Carrito
+        %th Cantidad
+        %th Precio
+        %th Editar
+        %th Comprar
+      - @cuenta.carritos.each do |carrito|
+        %tr
+          %td= link_to carrito.libro.titulo, carrito.libro
+          %td= carrito.cantidad
+          %td= carrito.precio_total
+          %td= link_to image_tag("edit.png"), edit_cuenta_carrito_path(current_cuenta,carrito)
+          %td= carrito.pendiente_comprar
+          %td= check_box_tag "pendiente_comprar[#{carrito.id}]"
+
+  = submit_tag "Finalizar compra"
+
+
+
+
   .enlaceboton
-    = link_to 'Finalizar Compra', edit_cuenta_path(current_cuenta)
+
+    = link_to 'Finalizar Compra', edit_cuenta_path(current_cuenta), :notice => "Los libros han sido comprados sin problemas"
 
 

@@ -1,4 +1,5 @@
-%h1 Libros Disponibles
+.centrado
+  %h1 Libros Disponibles
 
 %table
   %tr
@@ -18,7 +19,10 @@
   - @libros.each do |libro|
     %tr
       %td= link_to libro.titulo,libro
-      %td= link_to image_tag(libro.photo.url(:thumb)), new_cuenta_carrito_path(current_cuenta, :libro_id => libro.id)
+      - if current_cuenta
+        %td= link_to image_tag(libro.photo.url(:thumb)), new_cuenta_carrito_path(current_cuenta, :libro_id => libro.id)
+      - if !current_cuenta
+        %td= link_to image_tag(libro.photo.url(:thumb)),libro
       -#%td= libro.autor
       -#%td= libro.editorial
       -#%td= libro.categoria
@@ -30,4 +34,5 @@
       -#%td= link_to 'Edit', edit_libro_path(libro)
       -#%td= link_to 'Destroy', libro, :confirm => 'Are you sure?', :method => :delete
   - if current_cuenta && current_cuenta.administrador?
-    = link_to 'Añadir Libro', new_libro_path
+    .enlaceboton.izquierda
+      = link_to 'Añadir Libro', new_libro_path

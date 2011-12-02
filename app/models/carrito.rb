@@ -6,6 +6,9 @@ class Carrito < ActiveRecord::Base
 
   validates_presence_of :fecha_compra, :libro_id, :cuenta_id, :cantidad #:pendiente_comprar
 
+  scope :comprado ,where(:pendiente_comprar => false)
+  scope :comprar ,where(:pendiente_comprar => true)
+
 
   def calcula_precio_total
     self.precio_total = self.cantidad * self.libro.precio

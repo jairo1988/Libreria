@@ -5,7 +5,11 @@ Libreria::Application.routes.draw do
   end
 
   resources :cuentas do
-    resources :carritos
+    resources :carritos do
+      collection do
+        post "finalizar_compra"
+      end
+    end
   end
 
   get "log_in" => "sessions#new", :as => "log_in"

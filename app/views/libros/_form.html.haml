@@ -17,9 +17,10 @@
     = f.input :descripcion, :as => :text, :label => "Descripción"
     = f.input :stock
     = f.input :photo, :as=> :file
-    = f.input :fecha_disponible, :label => "Disponible desde", :as => :string
-    = f.input :proximolibro, :as=> :radio, :collection =>[["No",0],["Si",1]], :label => "Disponible?"
-  = f.buttons
+    = f.input :fecha_disponible, :label => "Disponible desde", :as => :string, :input_html => {:class => "fecha"}
+    = f.input :proximolibro, :as=> :select, :collection => [["No",0],["Si",1]], :label => "Ya a la Venta?"
+  = f.buttons do
+    = f.commit_button "Crear Libro"
 
   -#.field
     -#= f.label :titulo

@@ -74,9 +74,9 @@ div {
   background: #EEE;
   color: #222;
   margin: auto;
-  border: 1px outset #CCC;
-  padding: .1em 3em;
-  width: 5%;
+  border: 4px ridge #CCC;
+  padding: .1em 0 .1em 2em;
+  width: 11%;
 }
 
 .enlaceboton:hover{
@@ -106,6 +106,9 @@ div {
 .derecha{
   text-align: right;
 }
+.izquierda{
+  float: left;
+  margin-left: 10px;}
 
 .label{
   margin-top: 2%;
@@ -114,6 +117,7 @@ div {
 }
 fieldset{
   width: 45%;
+  margin-top: 26px;
   &.datos_personales{
   float: left;
   }
