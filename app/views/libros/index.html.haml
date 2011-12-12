@@ -1,7 +1,7 @@
 .centrado
   %h1 Libros Disponibles
 
-%table
+%table.span-18.clear
   %tr
     %th Título
     %th Comprar
@@ -25,8 +25,7 @@
         %td= link_to image_tag(libro.photo.url(:thumb)),libro
       -#%td= libro.autor
       -#%td= libro.editorial
-      -#%td= libro.categoria
-      -#%td= libro.anyo
+      -#%td= libro.categoria -#%td= libro.anyo
       -#%td= libro.paginas
       -#%td= libro.precio
       -#%td= libro.descripcion

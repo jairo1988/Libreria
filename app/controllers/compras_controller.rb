@@ -2,11 +2,18 @@ class ComprasController < ApplicationController
 
   #def finalizar_compra
     #@cuenta.compras.each do |c|
-      #if c.pendiente_comoprar = "true"
+      #if c.pendiente_comprar = "true"
 
   #end
+  def comprar
+
+    @compra = Compra.find(params[:id])
+    @compra.update_attribute(:comprado, true)
+
+    render :nothing => true
+  end
+
   def index
-    @compras = Compra.all
     @compras = Compra.carrito
     @cuenta = Cuenta.find(params[:cuenta_id])
     respond_to do |format|

@@ -7,6 +7,14 @@ jQuery(function(){
     $("p.precio_total").text(precio_total);
   })
 
+  $('a.comprar_libro').click(function(){
+    url = $(this).attr('href').replace("edit","comprar");
+    $.ajax({
+      type: "PUT",
+      url: url
+    })
 
+    return false;
 
+  })
 })

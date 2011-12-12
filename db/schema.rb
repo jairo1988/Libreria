@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111202104111) do
+ActiveRecord::Schema.define(:version => 20111205122818) do
 
   create_table "categorias", :force => true do |t|
     t.string   "categoria_nombre"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20111202104111) do
     t.integer "cantidad"
     t.integer "fecha_compra"
     t.integer "precio_total"
-    t.boolean "pendiente_comprar"
+    t.boolean "comprado"
   end
 
   create_table "contactos", :force => true do |t|

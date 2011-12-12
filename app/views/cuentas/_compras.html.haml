@@ -4,9 +4,9 @@
       %th Libros Comprados
       %th Cantidad
       %th Precio
-    - @cuenta.compras.each do |compra|
-      %tr
-        %td= link_to compra.libro.titulo, compra.libro
-        %td= compra.cantidad
-        %td= compra.precio_total
-        %td= link_to image_tag("destroy.jpg"),cuenta_compra_path(current_cuenta,compra), :confirm => "Desea eliminar la reserva #{compra.libro.titulo}?", :method => :delete
+    -#- @cuenta.compras.each do |compra|
+      -#%tr
+        -#%td= link_to compra.libro.titulo, compra.libro
+        -#%td= compra.cantidad
+        -#%td= compra.precio_total
+        -#%td= link_to image_tag("destroy.jpg"),cuenta_compra_path(current_cuenta,compra), :confirm => "Desea eliminar la reserva #{compra.libro.titulo}?", :method => :delete

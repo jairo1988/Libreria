@@ -31,7 +31,7 @@ before_filter :correct_cuenta, :only => [:edit,:update]
   # GET /cuenta/1/edit
   def edit
     @cuenta = Cuenta.find(params[:id])
-    @cuentas = Compra.comprado
+    @compras = @cuenta.compras.comprado
   end
 
   # POST /cuenta

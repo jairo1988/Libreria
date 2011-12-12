@@ -15,9 +15,9 @@ jQuery(function(){
   });
 });
 
-$(":input").delegate("*","focus blur",function(event){
-  var elem = $(this);
-  setTimeout(function(){
-    elem.toggleClass("focused", elem.is(":focus"));
-  },0);
-});
+/*$(":input").delegate("*","focus blur",function(event){*/
+  //var elem = $(this);
+  //setTimeout(function(){
+    //elem.toggleClass("focused", elem.is(":focus"));
+  //},0);
+/*});*/

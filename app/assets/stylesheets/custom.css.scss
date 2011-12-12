@@ -13,7 +13,8 @@ body {
 html{
   background-color: grey;
   }
-.container{
+.container#menuvertical{
+
   background-color: #fff;
   margin-top: 5px;}
 
@@ -34,7 +35,7 @@ a {
     color: #666; }
   &:hover {
     color: #fff;
-    background-color: #000; } }
+    background-color: olive; } }
 
 div {
   &.field, &.actions {
@@ -165,10 +166,10 @@ ul#menuinicio{
   list-style: none;
 }
 }
-.focused {
-  background: #abcdef;
+
+.clear {
+  clear:both;
 }
-.clear {clear:both;}
 
 // Menu Desplegable
 ul#menu_desplegable{
@@ -216,4 +217,32 @@ ul#menu_desplegable > li {// solo para li de primer nivel
 li#submenu{
   border: 2px solid black;
   background-color: red;
+}
+input:focus{
+  border: 2px solid #000;
+}
+ul#menuvertical{
+  width: 180px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #7C7C7C;
+  border-bottom: none;
+  float: right;
+}
+ul#menuvertical li{
+  border-bottom: 1px solid #7C7C7C;
+  border-top: 1px solid #FFF;
+  background: #F4F4F4;
+}
+ul#menuvertical li a{
+  padding: .2em 0 .2em .5em;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+#categoria{
+list-style-type: circle;
+padding-left: 30px;
+width: 300px;
 }

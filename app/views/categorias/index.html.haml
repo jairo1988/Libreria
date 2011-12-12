@@ -1,0 +1,13 @@
+.centrado
+  %h1 Categorias Disponibles
+
+%table#categoria.span-18
+  %tr
+    %th Categorias
+    %th Cantidad
+
+  - @categorias.each do |categoria|
+    %tr
+      %td= link_to categoria.categoria_nombre
+
+

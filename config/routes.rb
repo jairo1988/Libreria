@@ -5,12 +5,18 @@ Libreria::Application.routes.draw do
   end
 
   resources :cuentas do
-    resources :compras #do
+    resources :compras do
+      member do
+        put "comprar"
+      end
+    end
+  end
+    #do
       #collection do
         #post "finalizar_compra"
       #end
     #end
-  end
+  #end
 
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"

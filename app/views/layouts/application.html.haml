@@ -11,7 +11,7 @@
   %header#cabezera
     - if current_cuenta
       = link_to image_tag("carrito1.gif", :id => "imgcarrito"), cuenta_compras_path(current_cuenta)
-    %h1 Librería
+    %h1 Librería Fadrell
     %p.centrado
       - if current_cuenta
         = "Logged in as #{current_cuenta.email}"
@@ -22,6 +22,7 @@
         = link_to "Logearse", log_in_path
     = render 'layouts/menu'
     = render 'layouts/menudesplegable'
+    = render 'layouts/menuvertical'
   .clear
 
 
