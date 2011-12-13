@@ -1,8 +1,8 @@
 body {
-  background-color: black;
-  background-image: url("/assets/rails.png");
+  background-color: grey;
+  //background-image: url("/assets/rails.png");
   /*background-repeat: repeat-x;*/
-  background-size: 100%;
+  //background-size: 100%;
   color: #333;
   //margin: 26px;
   padding: 0;
@@ -13,9 +13,10 @@ body {
 html{
   background-color: grey;
   }
-.container#menuvertical{
 
-  background-color: #fff;
+.container{
+
+  background-color: aqua;
   margin-top: 5px;}
 
 
@@ -91,6 +92,15 @@ div {
   float: left;
   height: 50px;
   width: 50px;
+}
+#imgpaypal{
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin-left: 185px;
+}
+#cabezerafadrell{
+  margin-right: 271px;
 }
 #cabezera{
   background-color: red;
@@ -221,6 +231,7 @@ li#submenu{
 input:focus{
   border: 2px solid #000;
 }
+
 ul#menuvertical{
   width: 180px;
   list-style: none;
@@ -229,18 +240,19 @@ ul#menuvertical{
   border: 1px solid #7C7C7C;
   border-bottom: none;
   float: right;
+  li {
+    border-bottom: 1px solid #7C7C7C;
+    border-top: 1px solid #FFF;
+    background: #F4F4F4;
+    a {
+      padding: .2em 0 .2em .5em;
+      display: block;
+      text-decoration: none;
+      color: #333;
+    }
+  }
 }
-ul#menuvertical li{
-  border-bottom: 1px solid #7C7C7C;
-  border-top: 1px solid #FFF;
-  background: #F4F4F4;
-}
-ul#menuvertical li a{
-  padding: .2em 0 .2em .5em;
-  display: block;
-  text-decoration: none;
-  color: #333;
-}
+
 #categoria{
 list-style-type: circle;
 padding-left: 30px;

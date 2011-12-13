@@ -9,9 +9,12 @@
 %body
 
   %header#cabezera
+    - if !current_cuenta
+      = link_to image_tag("paypal1.jpeg", :id => "imgpaypal"), "http://www.paypal.com"
     - if current_cuenta
       = link_to image_tag("carrito1.gif", :id => "imgcarrito"), cuenta_compras_path(current_cuenta)
-    %h1 Librería Fadrell
+      = link_to image_tag("paypal1.jpeg", :id => "imgpaypal"), "http://www.paypal.com"
+    %h1#cabezerafadrell Librería Fadrell
     %p.centrado
       - if current_cuenta
         = "Logged in as #{current_cuenta.email}"
@@ -22,9 +25,9 @@
         = link_to "Logearse", log_in_path
     = render 'layouts/menu'
     = render 'layouts/menudesplegable'
-    = render 'layouts/menuvertical'
   .clear
 
 
-  .container.showgrid
+  .container
+    = render 'layouts/menuvertical'
     = yield

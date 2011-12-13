@@ -1,4 +1,4 @@
-%h2#compra Formulário Reserva de Libro
+%h2#compra Formulario Reserva de Libro
 = semantic_form_for [@cuenta, @reserva], :url => cuenta_reservas_path(@cuenta), :html => { :multipart => true} do |f|
   -if @reserva.errors.any?
     #error_explanation

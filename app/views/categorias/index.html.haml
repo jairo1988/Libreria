@@ -4,10 +4,11 @@
 %table#categoria.span-18
   %tr
     %th Categorias
-    %th Cantidad
+    %th Cantidad Libros
 
   - @categorias.each do |categoria|
     %tr
-      %td= link_to categoria.categoria_nombre
+      %td= link_to categoria.categoria_nombre, categoria_path(categoria)
+      %td.centrado= categoria.libros.size
 
 

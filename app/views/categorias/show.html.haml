@@ -1,0 +1,12 @@
+%h1.centrado= "Libros de la categoria #{@categoria.categoria_nombre}"
+
+
+
+%table
+  %tr
+    %th Título
+    %th Autor
+  - @categoria.libros.each do |libro|
+    %tr
+      %td= link_to libro.titulo, libro_path(libro)
+      %td= libro.autor

@@ -1,5 +1,8 @@
 Libreria::Application.routes.draw do
 
+  resource :about, :only => :show , :controller => "about"
+  resource :mapa, :only => :show, :controller => "mapa"
+
   resources :cuentas do
     resources :reservas
   end
