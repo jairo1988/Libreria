@@ -15,7 +15,7 @@
     -#%th
     -#%th
     -#%th
-
+  = will_paginate
   - @libros.each do |libro|
     %tr
       %td= link_to libro.titulo,libro
@@ -35,3 +35,4 @@
   - if current_cuenta && current_cuenta.administrador?
     .enlaceboton.izquierda
       = link_to 'Añadir Libro', new_libro_path
+= will_paginate

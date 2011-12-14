@@ -3,6 +3,7 @@ class LibrosController < ApplicationController
   # GET /libros.json
   def index
     @libros = Libro.disponibles
+    @libros = Libro.paginate(:page => params[:page], :per_page => 4)
 
     respond_to do |format|
       format.html # index.html.erb

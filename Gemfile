@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -21,7 +21,8 @@ gem 'therubyracer'
 gem 'formtastic'
 gem 'carrierwave'
 gem 'paperclip'
-#gem 'thinking-sphinx'
+gem 'thinking-sphinx'
+gem 'will_paginate'
 gem 'haml-rails'
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem 'bcrypt-ruby', :require => 'bcrypt'

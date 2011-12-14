@@ -3,6 +3,7 @@ class ProximosLibrosController < ApplicationController
   # GET /proximos_libros.json
   def index
     @proximos_libros = Libro.proximos
+    @proximos_libros = Libro.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

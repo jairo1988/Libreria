@@ -1,8 +1,15 @@
 class Libro < ActiveRecord::Base
-  attr_accessible :titulo,:autor,:editorial,:anyo,:paginas,:precio,:descripcion,:photo,:proximolibro,:stock,:categoria_id, :categoria_nombre
+  attr_accessible :titulo,:autor,:editorial,:anyo,:paginas,:precio,:descripcion,:photo,:proximolibro,:stock,:categoria_id, :categoria_nombre, :fecha_disponible
   belongs_to :categoria
   has_many :reservas
   has_many :compras
+
+  #define_index do
+    #indexes content
+    #indexes :titulo, sortable: true
+    #indexes descripcion.content, as: :descripcion
+    #indexes [libro.titulo, libro.autor], as: :libro
+  #end
 
 
   #def nombre_categoria=(v)

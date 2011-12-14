@@ -1,6 +1,6 @@
 - unless @cuenta.compras.empty?
   -#= form_tag finalizar_compra_cuenta_compras_path(@cuenta) do
-  %table
+  %table.span-18
     %tr
       %th Mi Compra
       %th Cantidad
@@ -14,7 +14,7 @@
         %td= compra.cantidad
         %td= compra.precio_total
         %td= link_to image_tag("edit.png"), edit_cuenta_compra_path(current_cuenta,compra)
-        %td= link_to image_tag("destroy.jpg"), cuenta_compras_path(current_cuenta,compra), :confirm => "Desea eliminar el libro #{compra.libro.titulo} del carrito?", :method => :delete
+        %td= link_to image_tag("destroy.jpg"), cuenta_compra_path(current_cuenta,compra), :confirm => "Desea eliminar el libro #{compra.libro.titulo} del carrito?", :method => :delete
         -#%td= check_box "pendiente_comprar[#{compra.id}]", :collection => [["No",0],["Si",1]]
         %td= link_to 'Comprar', edit_cuenta_compra_path(current_cuenta,compra), :class => "comprar_libro"
   -#.enlaceboton

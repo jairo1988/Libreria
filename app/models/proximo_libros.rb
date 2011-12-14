@@ -1,5 +1,5 @@
 class ProximoLibros < ActiveRecord::Base
- attr_accessible :titulo,:autor,:editorial,:categoria,:anyo,:paginas,:precio,:descripcion,:photo
+ attr_accessible :titulo,:autor,:editorial,:categoria,:anyo,:paginas,:precio,:descripcion,:photo,:fecha_disponible
  has_many :reserva
  #paperclip
   has_attached_file :photo, :styles => { :thumb => "50x50", :small => "50x50"}
