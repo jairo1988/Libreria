@@ -28,9 +28,11 @@
 %p
   %b Fecha Disponible:
   = @libro.fecha_disponible
-%p
-  %b Sinopsis:
-  = @libro.descripcion
+
+%dl
+  %dt Sinopsis:
+  %dd= @libro.descripcion
+
 -#%p
   -#%b Photo
   -#= @libro.photo

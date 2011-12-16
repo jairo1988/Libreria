@@ -4,12 +4,14 @@ class Libro < ActiveRecord::Base
   has_many :reservas
   has_many :compras
 
-  #define_index do
-    #indexes content
-    #indexes :titulo, sortable: true
-    #indexes descripcion.content, as: :descripcion
-    #indexes [libro.titulo, libro.autor], as: :libro
-  #end
+ define_index do #inserto los campos que quiero buscar
+    indexes titulo #los campos de la tabla libros, que es con la que estoy trabajando
+    indexes autor # es el nombre del campo de la tabla Libro
+    indexes descripcion
+    indexes editorial
+    indexes categoria(:categoria_nombre), :as => :categoria # quiero buscar por categorias, pero categoria no es un campo de Libro, por lo que utilizo la tabla categoria y el campo categoria_nombre
+
+  end
 
 
   #def nombre_categoria=(v)

@@ -1,4 +1,7 @@
-.centrado
+= form_tag proximos_libros_path, {:method => :get, :id => "search"} do
+  = text_field_tag :search, params[:search]
+  = submit_tag "Search", :name => "nil"
+.titulolibros
   %h1 Proximos Libros
 
 %table.span-18.clear

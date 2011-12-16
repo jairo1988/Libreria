@@ -1,10 +1,4 @@
 = semantic_form_for @libro, :html => { :multipart => true} do |f|
-  -if @libro.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@libro.errors.count, "error")} prohibited this libro from being saved:"
-      %ul
-        - @libro.errors.full_messages.each do |msg|
-          %li= msg
 
   = f.inputs :name => "Añadir libro" do
     = f.input :titulo

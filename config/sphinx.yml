@@ -1,0 +1,8 @@
+development:
+  port: 9312
+  min_inflix_len: 3
+  min_prefix_len: 3
+  mem_limit: 128M
+  max_matches: 1000
+  indexed_models:
+    - Libro
