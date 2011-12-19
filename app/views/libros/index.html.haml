@@ -25,7 +25,7 @@
       %td= link_to libro.titulo,libro
       %td= libro.stock
       - if current_cuenta
-        %td= link_to image_tag(libro.photo.url(:thumb)), new_cuenta_compra_path(current_cuenta, :libro_id => libro.id)
+        %td= link_to image_tag(libro.photo.url(:thumb)), new_cuenta_compra_path(current_cuenta, :libro_id => libro)
       - if !current_cuenta
         %td= link_to image_tag(libro.photo.url(:thumb)),libro
       -#%td= libro.autor

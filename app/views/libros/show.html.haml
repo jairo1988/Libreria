@@ -21,7 +21,7 @@
   = @libro.paginas
 %p
   %b Precio:
-  = @libro.precio
+  = sprintf("€%0.02f",@libro.precio)
 %p
   %b Stock:
   = @libro.stock
