@@ -1,0 +1,13 @@
+.titulolibros
+  %h1 Libros Agotados
+
+%table.span-18.clear
+  %tr
+    %th Título
+    %th Autor
+    %th Categoria
+  -@agotados.each do |agotado|
+    %th= link_to agotado.titulo,agotado
+    %th= agotado.autor
+    %th= agotado.categoria_nombre
+= will_paginate

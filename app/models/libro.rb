@@ -1,8 +1,10 @@
 class Libro < ActiveRecord::Base
-  attr_accessible :titulo,:autor,:editorial,:anyo,:paginas,:precio,:descripcion,:photo,:proximolibro,:stock,:categoria_id, :categoria_nombre, :fecha_disponible
+  attr_accessible :titulo,:autor,:editorial,:anyo,:paginas,:precio,:descripcion,:photo,:proximolibro,:stock,:categoria_id, :categoria_nombre, :fecha_disponible, :state
   belongs_to :categoria
   has_many :reservas
   has_many :compras
+
+
 
  define_index do #inserto los campos que quiero buscar
     indexes titulo #los campos de la tabla libros, que es con la que estoy trabajando
@@ -28,10 +30,24 @@ class Libro < ActiveRecord::Base
   validates_attachment_size :photo, :less_than => 2.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg','image/png','image/jpg']
 
-  scope :proximos, where(:proximolibro => false)
-  scope :disponibles, where(:proximolibro => true)
+  scope :proximos, where(:state => :proximo)
+  scope :disponibles, where(:state => :disponible)
+  scope :agotados, where(:state => :agotado )
 
-  #state_machine :state,
+  state_machine :state do
+
+    event :comprar do
+      transition :proximo => :disponible
+    end
+
+    event :vender do
+      transition :disponible => :agotado
+    end
+
+    event :recibir do
+      transition :agotado => :proximo
+    end
+  end
 
   #def self.lista_categoria
     #all.map(&:categoria).uniq
@@ -43,5 +59,7 @@ class Libro < ActiveRecord::Base
   def categoria_nombre=(nombre)
     self.categoria=Categoria.find_or_create_by_categoria_nombre(nombre) if nombre.present?
   end
+
+
 
 end
