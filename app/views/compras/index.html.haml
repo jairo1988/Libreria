@@ -11,14 +11,20 @@
     - @cuenta.compras.each do |compra|
       %tr
         %td= link_to compra.libro.titulo, compra.libro
-        %td= compra.cantidad
-        %td= compra.precio_total
+        %td.centrado= compra.cantidad
+        %td.centrado= sprintf("€%0.02f",compra.precio_total)
+        -#%td= compra.precio_total_compras
         %td= link_to image_tag("edit.png"), edit_cuenta_compra_path(current_cuenta,compra)
         %td= link_to image_tag("destroy.jpg"), cuenta_compra_path(current_cuenta,compra), :confirm => "Desea eliminar el libro #{compra.libro.titulo} del carrito?", :method => :delete
         -#%td= check_box "pendiente_comprar[#{compra.id}]", :collection => [["No",0],["Si",1]]
         %td= link_to 'Comprar', edit_cuenta_compra_path(current_cuenta,compra), :class => "comprar_libro"
+
+    %tr
+      %th.total{:colspan => 2} Total:
+      %th.precio_total_compras= sprintf("€%0.02f",@cuenta.precio_total_compras)
+      %th{:colspan => 3}
   -#.enlaceboton
     -#= link_to 'Finalizar Compra', edit_cuenta_path(current_cuenta), :notice => "Los libros han sido comprados sin problemas"
 
     -#= submit_tag "Finalizar compra"
-
+  =button_to 'Vaciar Carrito', @compra, :method => :delete, :confirm => "Estas seguro?"

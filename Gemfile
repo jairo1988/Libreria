@@ -19,6 +19,7 @@ end
 
 gem 'jquery-rails'
 gem 'therubyracer'
+gem 'state_machine'
 gem 'formtastic'
 gem 'carrierwave'
 gem 'paperclip'

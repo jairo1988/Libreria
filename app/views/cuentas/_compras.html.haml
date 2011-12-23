@@ -2,11 +2,16 @@
   %table
     %tr
       %th Libros Comprados
-      %th Cantidad
-      %th Precio
+      %th.centrado Cantidad
+      %th.centrado Precio
     - @cuenta.compras.each do |compra|
       %tr
         %td= link_to compra.libro.titulo, compra.libro
-        %td= compra.cantidad
-        %td= compra.precio_total
+        %td.centrado= compra.cantidad
+        %td.centrado= sprintf("€%0.02f", compra.precio_total)
         -#%td= link_to image_tag("destroy.jpg"),cuenta_compra_path(current_cuenta,compra), :confirm => "Desea eliminar la reserva #{compra.libro.titulo}?", :method => :delete
+    %tr
+    %th.total{:colspan => 2} Total:
+    %th.precio_total_compras= sprintf("€%0.02f",@cuenta.precio_total_compras)
+    %th{:colspan => 3}
+

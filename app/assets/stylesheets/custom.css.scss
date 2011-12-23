@@ -105,8 +105,17 @@ div {
 .titulolibros{
 margin-left: 26em;
 margin-top: -30px;
-
 }
+.total{
+  text-align: right;
+  font: 120% bold;
+}
+.precio_total_compras{
+  text-align: center;
+  font-weight: bold;
+  border-top: 5px solid #595;
+}
+
 #cabezera{
   background-color: red;
   padding: 5px;
@@ -262,4 +271,12 @@ ul#menuvertical{
 list-style-type: circle;
 padding-left: 30px;
 width: 300px;
+}
+p.stock {
+  font-size: 1.2em;
+  margin-top: 8px;
+}
+p.stock_final {
+  font-size: 1.2em;
+  margin-top: 8px;
 }

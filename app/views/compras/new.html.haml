@@ -15,6 +15,12 @@
     -#= f.input :cuenta_id
     = f.input :cantidad
     %li.string.input.stringish
+      %label.label Stock:
+      %p.stock=@compra.libro.stock
+    %li.string.input.stringish
+      %label.label Stock Final:
+      %p.stock_final= @compra.libro.stock
+    %li.string.input.stringish
       %label.label Precio Libro:
       %p.precio_libro= @compra.libro.precio
     %li.string.input.stringish

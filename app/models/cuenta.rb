@@ -35,4 +35,12 @@ class Cuenta < ActiveRecord::Base
   #validates :codigo, :presence => true, :on => :update
   #validates :telefono, :presence => true, :on => :update
   #validates :provincia, :presence => true, :on => :update
+  def precio_total_compras
+    compras.sum(:precio_total)
+    #p = 0
+    #compras.each do |compra|
+      #p += (compra.precio_total || 0)
+    #end
+    #return p
+  end
 end

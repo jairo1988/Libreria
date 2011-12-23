@@ -31,6 +31,8 @@ class Libro < ActiveRecord::Base
   scope :proximos, where(:proximolibro => false)
   scope :disponibles, where(:proximolibro => true)
 
+  #state_machine :state,
+
   #def self.lista_categoria
     #all.map(&:categoria).uniq
   #end

@@ -14,7 +14,7 @@ class ComprasController < ApplicationController
   end
 
   def index
-    @compras = Compra.carrito
+    @compras = Compra.comprado
     @cuenta = Cuenta.find(params[:cuenta_id])
     respond_to do |format|
       format.html # index.html.erb
