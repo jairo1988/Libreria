@@ -1,0 +1,17 @@
+.titulolibros
+  %h1 Libros Pendientes Añadir Stock
+
+%table.span-18.clear
+  %tr
+    %th Título
+    %th Autor
+    %th Categoria
+    %th Stock
+  -@pendientes.each do |pendiente|
+    %tr
+      %td= link_to pendiente.titulo,pendiente
+      %td= pendiente.autor
+      %td= pendiente.categoria_nombre
+      %td= pendiente.stock
+      %td= link_to image_tag("destroy.jpg"),pendiente, :confirm => "Desea eliminar el libro #{pendiente.titulo} del carrito?", :method => :delete
+= will_paginate

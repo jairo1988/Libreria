@@ -38,6 +38,8 @@ Libreria::Application.routes.draw do
 
   resources :agotados
 
+  resources :pendientes
+
 
   root :to => 'libros#index'
 

@@ -7,7 +7,9 @@
     %th Autor
     %th Categoria
   -@agotados.each do |agotado|
-    %th= link_to agotado.titulo,agotado
-    %th= agotado.autor
-    %th= agotado.categoria_nombre
+    %tr
+      %td= link_to agotado.titulo,agotado
+      %td= agotado.autor
+      %td= agotado.categoria_nombre
+      %td= link_to image_tag("destroy.jpg"),agotado, :confirm => "Desea eliminar el libro #{agotado.titulo} del carrito?", :method => :delete
 = will_paginate

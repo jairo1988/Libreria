@@ -1,18 +1,5 @@
 class ComprasController < ApplicationController
 
-  #def finalizar_compra
-    #@cuenta.compras.each do |c|
-      #if c.pendiente_comprar = "true"
-
-  #end
-  def comprar
-
-    @compra = Compra.find(params[:id])
-    @compra.update_attribute(:comprado, true)
-
-    render :nothing => true
-  end
-
   def index
     @compras = Compra.comprado
     @cuenta = Cuenta.find(params[:cuenta_id])
@@ -62,11 +49,11 @@ class ComprasController < ApplicationController
 
   def update
     @compra=Compra.find(params[:id])
-      if @compra.update_attributes(params[:Compra])
-        redirect_to edit_cuenta_path(current_cuenta)
-      else
-        render action: "edit"
-      end
+    if @compra.update_attributes(params[:Compra])
+      redirect_to edit_cuenta_path(current_cuenta)
+    else
+      render action: "edit"
+    end
   end
   # DELETE /libros/1
   # DELETE /libros/1.json

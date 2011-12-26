@@ -20,7 +20,7 @@ class Compra < ActiveRecord::Base
   end
 
   def calcula_stock_final
-    libro.stock -= self.cantidad
+    libro.stock -= cantidad
     libro.save
   end
 

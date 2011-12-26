@@ -4,9 +4,13 @@ class Libro < ActiveRecord::Base
   has_many :reservas
   has_many :compras
 
+  validates_presence_of :precio,:titulo,:categoria_nombre,:state
+
+  after_save :actualiza_state
 
 
- define_index do #inserto los campos que quiero buscar
+
+  define_index do #inserto los campos que quiero buscar
     indexes titulo #los campos de la tabla libros, que es con la que estoy trabajando
     indexes autor # es el nombre del campo de la tabla Libro
     indexes descripcion
@@ -18,9 +22,9 @@ class Libro < ActiveRecord::Base
 
   #def nombre_categoria=(v)
 
-    ## buscar en Categoria por el nombre y si no existe crearla
-    #categoria_encontrada =  Categoria.find_by_nombre(v)
-    #self.categoria = categoria_encontrada
+  ## buscar en Categoria por el nombre y si no existe crearla
+  #categoria_encontrada =  Categoria.find_by_nombre(v)
+  #self.categoria = categoria_encontrada
   #end
 
 
@@ -33,24 +37,29 @@ class Libro < ActiveRecord::Base
   scope :proximos, where(:state => :proximo)
   scope :disponibles, where(:state => :disponible)
   scope :agotados, where(:state => :agotado )
+  scope :pendientes, where(:state => :pendiente)
 
   state_machine :state do
 
-    event :comprar do
-      transition :proximo => :disponible
-    end
-
-    event :vender do
-      transition :disponible => :agotado
+    event :esperar do
+      transition :proximo => :pendiente
     end
 
     event :recibir do
+      transition :proximo => :disponible
+    end
+
+    event :agotar do
+      transition :disponible => :agotado
+    end
+
+    event :encargar do
       transition :agotado => :proximo
     end
   end
 
   #def self.lista_categoria
-    #all.map(&:categoria).uniq
+  #all.map(&:categoria).uniq
   #end
 
   def categoria_nombre
@@ -60,6 +69,12 @@ class Libro < ActiveRecord::Base
     self.categoria=Categoria.find_or_create_by_categoria_nombre(nombre) if nombre.present?
   end
 
+  def actualiza_state
+    if stock == 0
+      self.agotar
+    end
+
+  end
 
 
 end
