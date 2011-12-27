@@ -3,6 +3,12 @@ before_filter :correct_cuenta, :only => [:edit,:update]
 
   # GET /cuenta
   # GET /cuenta.json
+  def vaciar_carrito
+    current_cuenta.compras.clear
+    redirect_to cuenta_compras_path(current_cuenta)
+  end
+
+
   def index
     @cuentas = Cuenta.all
 

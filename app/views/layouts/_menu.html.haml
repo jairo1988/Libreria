@@ -2,7 +2,8 @@
   %li= link_to "Libros Disponibles", libros_path
   %li= link_to "Proximos Libros",proximos_libros_path
   %li= link_to "Libros Agotados", agotados_path
-  %li= link_to "Libros Pendientes", pendientes_path
+  -#- if current_cuenta && current_cuenta.administrador?
+    -#%li= link_to "Libros Pendientes", pendientes_path
   - unless current_cuenta
     %li= link_to "Contacto", new_contacto_path
 

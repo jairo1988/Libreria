@@ -27,7 +27,7 @@
   = @libro.stock
 %p
   %b Fecha Disponible:
-  = @libro.fecha_disponible
+  = l(@libro.fecha_disponible, :format=>"%d/%m/%Y")
 
 %dl
   %dt Sinopsis:

@@ -12,7 +12,7 @@
     = f.input :stock
     = f.input :photo, :as=> :file
     = f.input :fecha_disponible, :label => "Disponible desde", :as => :string, :input_html => {:class => "fecha"}
-    = f.input :state, :as=> :select, :collection => [["Disponible","disponible"],["Proximo","proximo"]], :label => "Ya a la Venta?"
+    = f.input :state, :as=> :select, :collection => [["Disponible","disponible"],["Proximo","proximo"],["Agotado","agotado"]], :label => "Ya a la Venta?"
   = f.buttons do
     = f.commit_button "Crear Libro"
 

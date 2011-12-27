@@ -1,3 +1,7 @@
+= form_tag libros_path, {:method => :get, :id => "search"} do
+  = text_field_tag :search, params[:search]
+  = submit_tag "Search", :name => "nil"
+
 .titulolibros
   %h1 Libros Pendientes Añadir Stock
 

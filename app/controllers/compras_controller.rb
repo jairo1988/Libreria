@@ -1,6 +1,6 @@
 class ComprasController < ApplicationController
 
-  def index
+   def index
     @compras = Compra.comprado
     @cuenta = Cuenta.find(params[:cuenta_id])
     respond_to do |format|

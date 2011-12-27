@@ -1,3 +1,7 @@
+= form_tag libros_path, {:method => :get, :id => "search"} do
+  = text_field_tag :search, params[:search]
+  = submit_tag "Search", :name => "nil"
+
 .titulolibros
   %h1 Libros Agotados
 
@@ -6,10 +10,12 @@
     %th Título
     %th Autor
     %th Categoria
+    %th Fecha Disponible
   -@agotados.each do |agotado|
     %tr
       %td= link_to agotado.titulo,agotado
       %td= agotado.autor
       %td= agotado.categoria_nombre
+      %td= l(agotado.fecha_disponible, :format=>"%d/%m/%Y")
       %td= link_to image_tag("destroy.jpg"),agotado, :confirm => "Desea eliminar el libro #{agotado.titulo} del carrito?", :method => :delete
 = will_paginate

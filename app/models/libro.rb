@@ -41,7 +41,7 @@ class Libro < ActiveRecord::Base
 
   state_machine :state do
 
-    event :esperar do
+    event :esperar do #cuando el stock llega a 0
       transition :proximo => :pendiente
     end
 
@@ -54,7 +54,7 @@ class Libro < ActiveRecord::Base
     end
 
     event :encargar do
-      transition :agotado => :proximo
+      transition :agotado => :disponible
     end
   end
 

@@ -19,7 +19,7 @@
         -#%td= check_box "pendiente_comprar[#{compra.id}]", :collection => [["No",0],["Si",1]]
         %td= link_to 'Comprar', edit_cuenta_compra_path(current_cuenta,compra), :class => "comprar_libro"
 
-    %tr
+    %tr.clear
       %th.total{:colspan => 2} Total:
       %th.precio_total_compras= sprintf("€%0.02f",@cuenta.precio_total_compras)
       %th{:colspan => 3}
@@ -27,4 +27,6 @@
     -#= link_to 'Finalizar Compra', edit_cuenta_path(current_cuenta), :notice => "Los libros han sido comprados sin problemas"
 
     -#= submit_tag "Finalizar compra"
-  =button_to 'Vaciar Carrito', @compra, :method => :delete, :confirm => "Estas seguro?"
+  - if current_cuenta
+    =button_to 'Vaciar Carrito', vaciar_carrito_cuenta_path(@cuenta), :confirm => "Desea vaciar el carrito entero?",   :method => :put
+
