@@ -28,5 +28,4 @@
 
     -#= submit_tag "Finalizar compra"
   - if current_cuenta
-    =button_to 'Vaciar Carrito', vaciar_carrito_cuenta_path(@cuenta), :confirm => "Desea vaciar el carrito entero?",   :method => :put
-
+    =button_to 'Vaciar Carrito', vaciar_carrito_cuenta_path(@cuenta), :confirm => "Desea vaciar su carrito entero?", :method => :put

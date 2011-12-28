@@ -8,9 +8,9 @@ Libreria::Application.routes.draw do
   end
 
   resources :cuentas do
-      member do
-        put "vaciar_carrito"
-      end
+    member do
+      put "vaciar_carrito"
+    end
     resources :compras do
       member do
         put "comprar"

@@ -1,7 +1,7 @@
 class Cuenta < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :administrador, :nombre, :apellido, :nif, :direccion, :ciudad, :codigo, :telefono, :provincia
   has_many :reservas
-  has_many :compras, :dependent=>:destroy
+  has_many :compras, :dependent=> :destroy
 
   attr_accessor :password
   before_save :encrypt_password
