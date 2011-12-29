@@ -1,8 +1,15 @@
 class ComprasController < ApplicationController
 
    def index
-    @compras = Compra.comprado
+    #@compras = Compra.comprado
     @cuenta = Cuenta.find(params[:cuenta_id])
+    if params[:cuenta_id]
+      @compras = Cuenta.find(params[:cuenta_id]).compras
+    elsif current_cuenta.administrador?
+      @compras = Compra.all
+    else
+      @compras = current_cuenta.compras
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @compras }

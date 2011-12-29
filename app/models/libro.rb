@@ -37,12 +37,11 @@ class Libro < ActiveRecord::Base
   scope :proximos, where(:state => :proximo)
   scope :disponibles, where(:state => :disponible)
   scope :agotados, where(:state => :agotado )
-  scope :pendientes, where(:state => :pendiente)
 
   state_machine :state do
 
     event :esperar do #cuando el stock llega a 0
-      transition :proximo => :pendiente
+      transition :proximo => :agotado
     end
 
     event :recibir do
@@ -55,6 +54,10 @@ class Libro < ActiveRecord::Base
 
     event :encargar do
       transition :agotado => :disponible
+    end
+
+    event :cancelar do
+      transition :agotado => :proximo
     end
   end
 

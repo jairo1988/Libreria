@@ -1,0 +1,13 @@
+%h1 Libros Vendidos
+
+%table.span-18
+  %tr
+    %th Titulo
+    %th Cantidad
+    %th Precio
+  - @ventas.each do |venta|
+    %tr
+      %td= link_to venta.libro.titulo, venta.libro
+      -#%td= venta.compra.cantidad
+      %td= venta.libro.precio
+

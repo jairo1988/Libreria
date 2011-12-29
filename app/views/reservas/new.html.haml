@@ -1,11 +1,5 @@
 %h2#compra Formulario Reserva de Libro
-= semantic_form_for [@cuenta, @reserva], :url => cuenta_reservas_path(@cuenta), :html => { :multipart => true} do |f|
-  -if @reserva.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@reserva.errors.count, "error")} prohibited this libro from being saved:"
-      %ul
-        - @reserva.errors.full_messages.each do |msg|
-          %li= msg
+= semantic_form_for [@cuenta, @reserva], :url => cuenta_reservas_path(@cuenta), :html => { :multipart => true, :autocomplete => :off} do |f|
 
   = f.inputs :name => "Reservar Libro" do
     %li.string.input.stringish
@@ -14,10 +8,17 @@
     -#= f.input :libro_id
     -#= f.input :cuenta_id
     = f.input :cantidad
+    %li.string.input.stringish
+      %label.label Stock:
+      %p.stock= @reserva.libro.stock
+    %li.string.input.stringish
+      %label.label Stock Final:
+      %p.stock_final= @reserva.libro.stock
     = f.input :fecha_reserva, :as=> :string
     = f.input :libro_id, :as => :hidden
     = f.input :cuenta_id, :as => :hidden
-  = f.buttons
+  = f.buttons do
+    = f.commit_button "Reservar Libro"
 
 
 

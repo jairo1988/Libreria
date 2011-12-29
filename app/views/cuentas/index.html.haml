@@ -1,33 +1,16 @@
 %h1 Información de Cuenta
 
-%table
+%table.span-6.clear
   %tr
     %th Email
-    %th Nombre
-    %th Apellido
-    %th Nif
-    %th Direccion
-    %th Ciudad
-    %th Codigo
-    %th Provincia
-    %th Telefono
-    %th Administrador
+    %th
     %th
     %th
 
   - @cuentas.each do |cuenta|
     %tr
-      %td= cuenta.email
-      %td= cuenta.nombre
-      %td= cuenta.apellido
-      %td= cuenta.nif
-      %td= cuenta.direccion
-      %td= cuenta.ciudad
-      %td= cuenta.codigo
-      %td= cuenta.provincia
-      %td= cuenta.telefono
-      %td= cuenta.administrador
-      -#%td= link_to image_tag("show.png"), cuenta
+      %td= mail_to cuenta.email
+      %td= link_to image_tag("show.png"), cuenta
       %td= link_to image_tag("edit.png"), edit_cuenta_path(cuenta)
       %td=link_to image_tag("destroy.jpg"),cuenta, :confirm => 'Are you sure?', :method => :delete
 

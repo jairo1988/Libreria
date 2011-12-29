@@ -1,4 +1,4 @@
-= semantic_form_for @libro, :html => { :multipart => true} do |f|
+= semantic_form_for @libro, :html => { :multipart => true, :autocomplete=> :off} do |f|
 
   = f.inputs :name => "Añadir libro" do
     = f.input :titulo

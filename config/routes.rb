@@ -6,6 +6,8 @@ Libreria::Application.routes.draw do
   resources :cuentas do
     resources :reservas
   end
+  resources :reservas
+  resources :ventas
 
   resources :cuentas do
     member do

@@ -1,0 +1,13 @@
+%h1 Reservas Libros
+
+%table.span-18
+  %tr
+    %th Titulo
+    %th Cantidad
+    %th Cuenta
+
+  - @reservas.each do |reserva|
+    %tr
+      %td= link_to reserva.libro.titulo, reserva.libro
+      %td= reserva.cantidad
+      %td= reserva.cuenta.email if reserva.cuenta

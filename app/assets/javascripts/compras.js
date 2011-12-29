@@ -8,6 +8,10 @@ jQuery(function(){
     stock_final = stock - valor;
     $("p.stock_final").text(stock_final);
     $("p.precio_total").text(precio_total);
+     if (stock_final < 0) {
+ /*     $("p.stock_final").css('color','red');*/
+      $("p.stock_final").addClass("marcado");
+    }
   })
 
 
